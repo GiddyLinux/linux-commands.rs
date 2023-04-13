@@ -1,3 +1,9 @@
+use std::fs::File;
+
+mod cat;
 fn main() {
-    println!("Hello, world!");
+    let cat_file = File::open("src\\test.txt").unwrap();
+    let file = cat::file::get_bytes(cat_file);
+    print!("{}", file)
+
 }
